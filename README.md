@@ -16,7 +16,7 @@ you doing absolutely anything.
 security vulnerabilities.
 
 <p align='center'>
-<img src="./Resources/MainView.png">
+<img src="./Resources/MainView.png" width="300" height="auto">
 </p>
 
 ## Development Status
