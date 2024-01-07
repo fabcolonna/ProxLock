@@ -39,7 +39,7 @@ I took inspiration from a very cool open-source project named [`BLEUnlock`](http
 
 ## Authors
 
-- **Fabio Colonna** - [levarr](https://github.com/levarr)
+- **Fabio Colonna** - [fabcolonna](https://github.com/fabcolonna)
 
 ## License
 
