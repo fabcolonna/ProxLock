@@ -24,6 +24,7 @@
 		E5F192192B4AB8DD00EF0A99 /* PLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192182B4AB8DD00EF0A99 /* PLStatus.swift */; };
 		E5F1921B2B4AB8F500EF0A99 /* PLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */; };
 		E5F1921D2B4AB96C00EF0A99 /* PLSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1921C2B4AB96C00EF0A99 /* PLSettings.swift */; };
+		E5F192202B4B684C00EF0A99 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E5F1921F2B4B684C00EF0A99 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		E5F192182B4AB8DD00EF0A99 /* PLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLStatus.swift; sourceTree = "<group>"; };
 		E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLDevice.swift; sourceTree = "<group>"; };
 		E5F1921C2B4AB96C00EF0A99 /* PLSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSettings.swift; sourceTree = "<group>"; };
+		E5F1921E2B4B61A800EF0A99 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E5F1921F2B4B684C00EF0A99 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 		E5F191BE2B44D5ED00EF0A99 = {
 			isa = PBXGroup;
 			children = (
+				E5F1921F2B4B684C00EF0A99 /* LICENSE */,
+				E5F1921E2B4B61A800EF0A99 /* README.md */,
 				E5F191E92B44DD9000EF0A99 /* Localizable.xcstrings */,
 				E5F191C92B44D5ED00EF0A99 /* ProxLock */,
 				E5F191C82B44D5ED00EF0A99 /* Products */,
@@ -206,6 +211,7 @@
 			files = (
 				E5F191D22B44D5EE00EF0A99 /* Preview Assets.xcassets in Resources */,
 				E5F191CF2B44D5EE00EF0A99 /* Assets.xcassets in Resources */,
+				E5F192202B4B684C00EF0A99 /* LICENSE in Resources */,
 				E5F191EA2B44DD9000EF0A99 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
