@@ -7,19 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E5F191CB2B44D5ED00EF0A99 /* ProxLockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F191CA2B44D5ED00EF0A99 /* ProxLockApp.swift */; };
-		E5F191CD2B44D5ED00EF0A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F191CC2B44D5ED00EF0A99 /* ContentView.swift */; };
+		E5F191CB2B44D5ED00EF0A99 /* PLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F191CA2B44D5ED00EF0A99 /* PLApp.swift */; };
+		E5F191CD2B44D5ED00EF0A99 /* PLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F191CC2B44D5ED00EF0A99 /* PLView.swift */; };
 		E5F191CF2B44D5EE00EF0A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5F191CE2B44D5EE00EF0A99 /* Assets.xcassets */; };
 		E5F191D22B44D5EE00EF0A99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5F191D12B44D5EE00EF0A99 /* Preview Assets.xcassets */; };
+		E5F191E32B44DB1800EF0A99 /* PLTileStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F191E22B44DB1800EF0A99 /* PLTileStyle.swift */; };
+		E5F191E52B44DC2500EF0A99 /* PLSignalChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F191E42B44DC2500EF0A99 /* PLSignalChart.swift */; };
+		E5F191EA2B44DD9000EF0A99 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E5F191E92B44DD9000EF0A99 /* Localizable.xcstrings */; };
+		E5F191ED2B455D0A00EF0A99 /* MacControlCenterUI in Frameworks */ = {isa = PBXBuildFile; productRef = E5F191EC2B455D0A00EF0A99 /* MacControlCenterUI */; };
+		E5F192062B4734C600EF0A99 /* PLEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192052B4734C600EF0A99 /* PLEngine.swift */; };
+		E5F1920B2B4760C000EF0A99 /* PLStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1920A2B4760C000EF0A99 /* PLStatusView.swift */; };
+		E5F192102B4761E000EF0A99 /* PLMainSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1920F2B4761E000EF0A99 /* PLMainSwitchView.swift */; };
+		E5F192122B4778D800EF0A99 /* PLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192112B4778D800EF0A99 /* PLWelcomeView.swift */; };
+		E5F192142B49D53A00EF0A99 /* PLSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192132B49D53A00EF0A99 /* PLSettingsView.swift */; };
+		E5F192162B49F69600EF0A99 /* PLAvailableDevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192152B49F69600EF0A99 /* PLAvailableDevicesView.swift */; };
+		E5F192192B4AB8DD00EF0A99 /* PLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192182B4AB8DD00EF0A99 /* PLStatus.swift */; };
+		E5F1921B2B4AB8F500EF0A99 /* PLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */; };
+		E5F1921D2B4AB96C00EF0A99 /* PLSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1921C2B4AB96C00EF0A99 /* PLSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E5F191C72B44D5ED00EF0A99 /* ProxLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProxLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5F191CA2B44D5ED00EF0A99 /* ProxLockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxLockApp.swift; sourceTree = "<group>"; };
-		E5F191CC2B44D5ED00EF0A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E5F191CA2B44D5ED00EF0A99 /* PLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLApp.swift; sourceTree = "<group>"; };
+		E5F191CC2B44D5ED00EF0A99 /* PLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLView.swift; sourceTree = "<group>"; };
 		E5F191CE2B44D5EE00EF0A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5F191D12B44D5EE00EF0A99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5F191D32B44D5EE00EF0A99 /* ProxLock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProxLock.entitlements; sourceTree = "<group>"; };
+		E5F191E22B44DB1800EF0A99 /* PLTileStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLTileStyle.swift; sourceTree = "<group>"; };
+		E5F191E42B44DC2500EF0A99 /* PLSignalChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSignalChart.swift; sourceTree = "<group>"; };
+		E5F191E92B44DD9000EF0A99 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E5F192052B4734C600EF0A99 /* PLEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLEngine.swift; sourceTree = "<group>"; };
+		E5F1920A2B4760C000EF0A99 /* PLStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLStatusView.swift; sourceTree = "<group>"; };
+		E5F1920F2B4761E000EF0A99 /* PLMainSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLMainSwitchView.swift; sourceTree = "<group>"; };
+		E5F192112B4778D800EF0A99 /* PLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLWelcomeView.swift; sourceTree = "<group>"; };
+		E5F192132B49D53A00EF0A99 /* PLSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSettingsView.swift; sourceTree = "<group>"; };
+		E5F192152B49F69600EF0A99 /* PLAvailableDevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLAvailableDevicesView.swift; sourceTree = "<group>"; };
+		E5F192182B4AB8DD00EF0A99 /* PLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLStatus.swift; sourceTree = "<group>"; };
+		E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLDevice.swift; sourceTree = "<group>"; };
+		E5F1921C2B4AB96C00EF0A99 /* PLSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F191ED2B455D0A00EF0A99 /* MacControlCenterUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +62,7 @@
 		E5F191BE2B44D5ED00EF0A99 = {
 			isa = PBXGroup;
 			children = (
+				E5F191E92B44DD9000EF0A99 /* Localizable.xcstrings */,
 				E5F191C92B44D5ED00EF0A99 /* ProxLock */,
 				E5F191C82B44D5ED00EF0A99 /* Products */,
 			);
@@ -52,8 +79,10 @@
 		E5F191C92B44D5ED00EF0A99 /* ProxLock */ = {
 			isa = PBXGroup;
 			children = (
-				E5F191CA2B44D5ED00EF0A99 /* ProxLockApp.swift */,
-				E5F191CC2B44D5ED00EF0A99 /* ContentView.swift */,
+				E5F192172B4AB8D100EF0A99 /* Types */,
+				E5F1920E2B47618400EF0A99 /* Main */,
+				E5F191F12B460F1100EF0A99 /* Bluetooth Engine */,
+				E5F191DF2B44DA7000EF0A99 /* UI Components */,
 				E5F191CE2B44D5EE00EF0A99 /* Assets.xcassets */,
 				E5F191D32B44D5EE00EF0A99 /* ProxLock.entitlements */,
 				E5F191D02B44D5EE00EF0A99 /* Preview Content */,
@@ -67,6 +96,47 @@
 				E5F191D12B44D5EE00EF0A99 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5F191DF2B44DA7000EF0A99 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5F192112B4778D800EF0A99 /* PLWelcomeView.swift */,
+				E5F1920F2B4761E000EF0A99 /* PLMainSwitchView.swift */,
+				E5F192132B49D53A00EF0A99 /* PLSettingsView.swift */,
+				E5F1920A2B4760C000EF0A99 /* PLStatusView.swift */,
+				E5F192152B49F69600EF0A99 /* PLAvailableDevicesView.swift */,
+				E5F191E42B44DC2500EF0A99 /* PLSignalChart.swift */,
+				E5F191E22B44DB1800EF0A99 /* PLTileStyle.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		E5F191F12B460F1100EF0A99 /* Bluetooth Engine */ = {
+			isa = PBXGroup;
+			children = (
+				E5F192052B4734C600EF0A99 /* PLEngine.swift */,
+			);
+			path = "Bluetooth Engine";
+			sourceTree = "<group>";
+		};
+		E5F1920E2B47618400EF0A99 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E5F191CA2B44D5ED00EF0A99 /* PLApp.swift */,
+				E5F191CC2B44D5ED00EF0A99 /* PLView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E5F192172B4AB8D100EF0A99 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				E5F192182B4AB8DD00EF0A99 /* PLStatus.swift */,
+				E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */,
+				E5F1921C2B4AB96C00EF0A99 /* PLSettings.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +155,9 @@
 			dependencies = (
 			);
 			name = ProxLock;
+			packageProductDependencies = (
+				E5F191EC2B455D0A00EF0A99 /* MacControlCenterUI */,
+			);
 			productName = ProxLock;
 			productReference = E5F191C72B44D5ED00EF0A99 /* ProxLock.app */;
 			productType = "com.apple.product-type.application";
@@ -111,8 +184,12 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = E5F191BE2B44D5ED00EF0A99;
+			packageReferences = (
+				E5F191EB2B455D0A00EF0A99 /* XCRemoteSwiftPackageReference "MacControlCenterUI" */,
+			);
 			productRefGroup = E5F191C82B44D5ED00EF0A99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +206,7 @@
 			files = (
 				E5F191D22B44D5EE00EF0A99 /* Preview Assets.xcassets in Resources */,
 				E5F191CF2B44D5EE00EF0A99 /* Assets.xcassets in Resources */,
+				E5F191EA2B44DD9000EF0A99 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +217,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5F191CD2B44D5ED00EF0A99 /* ContentView.swift in Sources */,
-				E5F191CB2B44D5ED00EF0A99 /* ProxLockApp.swift in Sources */,
+				E5F1920B2B4760C000EF0A99 /* PLStatusView.swift in Sources */,
+				E5F191CD2B44D5ED00EF0A99 /* PLView.swift in Sources */,
+				E5F192122B4778D800EF0A99 /* PLWelcomeView.swift in Sources */,
+				E5F192062B4734C600EF0A99 /* PLEngine.swift in Sources */,
+				E5F1921D2B4AB96C00EF0A99 /* PLSettings.swift in Sources */,
+				E5F191E52B44DC2500EF0A99 /* PLSignalChart.swift in Sources */,
+				E5F1921B2B4AB8F500EF0A99 /* PLDevice.swift in Sources */,
+				E5F192192B4AB8DD00EF0A99 /* PLStatus.swift in Sources */,
+				E5F192102B4761E000EF0A99 /* PLMainSwitchView.swift in Sources */,
+				E5F192162B49F69600EF0A99 /* PLAvailableDevicesView.swift in Sources */,
+				E5F191E32B44DB1800EF0A99 /* PLTileStyle.swift in Sources */,
+				E5F192142B49D53A00EF0A99 /* PLSettingsView.swift in Sources */,
+				E5F191CB2B44D5ED00EF0A99 /* PLApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +368,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "ProxLock requires Bluetooth access in order to detect devices.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +396,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "ProxLock requires Bluetooth access in order to detect devices.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5F191EB2B455D0A00EF0A99 /* XCRemoteSwiftPackageReference "MacControlCenterUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orchetect/MacControlCenterUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5F191EC2B455D0A00EF0A99 /* MacControlCenterUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5F191EB2B455D0A00EF0A99 /* XCRemoteSwiftPackageReference "MacControlCenterUI" */;
+			productName = MacControlCenterUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5F191BF2B44D5ED00EF0A99 /* Project object */;
 }
