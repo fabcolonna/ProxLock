@@ -16,7 +16,7 @@ you doing absolutely anything.
 security vulnerabilities.
 
 <p align='center'>
-<img src="./Resources/MainView.png">
+<img src="./Resources/MainView.png" width="300" height="auto">
 </p>
 
 ## Development Status
@@ -39,7 +39,7 @@ I took inspiration from a very cool open-source project named [`BLEUnlock`](http
 
 ## Authors
 
-- **Fabio Colonna** - [levarr](https://github.com/levarr)
+- **Fabio Colonna** - [fabcolonna](https://github.com/fabcolonna)
 
 ## License
 
