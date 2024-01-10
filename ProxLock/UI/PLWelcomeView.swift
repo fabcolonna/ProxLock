@@ -23,10 +23,8 @@ struct PLWelcomeView: View {
             Toggle("", isOn: $internalMainSwitch)
                 .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 .shadow(radius: 5)
-                .onChange(of: internalMainSwitch) { _, newValue in
-                    withAnimation {
-                        mainSwitch = newValue
-                    }
+                .onChange(of: internalMainSwitch) { _, new in
+                    withAnimation { mainSwitch = new }
                 }
             
             Spacer()
@@ -34,13 +32,7 @@ struct PLWelcomeView: View {
         .opacity(animating ? 1.0 : 0.0)
         .scaleEffect(animating ? 1.0 : 0.5)
         .onAppear {
-            withAnimation(.bouncy(duration: 0.5, extraBounce: 0.3)) {
-                animating.toggle()
-            }
+            withAnimation(.bouncy(duration: 0.5, extraBounce: 0.3)) { animating.toggle() }
         }
-        
-        Text("Made with ♥️ by fabcolonna")
-            .font(.system(size: 11, weight: .regular))
-            .frame(maxWidth: .infinity, alignment: .center)
     }
 }

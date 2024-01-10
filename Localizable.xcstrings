@@ -21,86 +21,11 @@
         }
       }
     },
-    "%lld dBm" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld dBm"
-          }
-        }
-      }
-    },
-    "Delay before Locking" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delay before Locking"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ritardo prima del Blocco"
-          }
-        }
-      }
-    },
-    "Launch on Login" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Launch on Login"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avvia al Login"
-          }
-        }
-      }
-    },
-    "Lock Threshold" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock Threshold"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Soglia di Blocco"
-          }
-        }
-      }
-    },
-    "Lock to Screensaver" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock to Screensaver"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Blocca con Salvaschermo"
-          }
-        }
-      }
+    "Errore" : {
+
     },
     "Made with ♥️ by fabcolonna" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -112,40 +37,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Creato con ♥️ da fabcolonna"
-          }
-        }
-      }
-    },
-    "No Signal Timeout" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Signal Timeout"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Timeout Nessun Segnale"
-          }
-        }
-      }
-    },
-    "Pause Now Playing" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pause Now Playing"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Metti in pausa In Riproduzione"
           }
         }
       }
@@ -184,6 +75,17 @@
         }
       }
     },
+    "PLDelayBeforeLockingOption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delay before Locking"
+          }
+        }
+      }
+    },
     "PLFallbackDev" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -201,19 +103,57 @@
         }
       }
     },
-    "PLMainSwitch" : {
+    "PLInvalidThresholdStatusError" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ProxLock Status"
+            "value" : "Wake threshold should be greater than Lock threshold!"
           }
-        },
-        "it" : {
+        }
+      }
+    },
+    "PLLaunchOnLoginOption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stato di ProxLock"
+            "value" : "Launch On Login"
+          }
+        }
+      }
+    },
+    "PLLockThresholdStepper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock Threshold"
+          }
+        }
+      }
+    },
+    "PLLockToScreensaverToggle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock To Screensaver"
+          }
+        }
+      }
+    },
+    "PLNoSignalTimeoutOption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Signal Timeout"
           }
         }
       }
@@ -235,19 +175,13 @@
         }
       }
     },
-    "PLNotWorkingHeaderMessage" : {
+    "PLPauseNowPlayingToggle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Not running"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Non in funzione"
+            "value" : "Pause Now Playing"
           }
         }
       }
@@ -269,98 +203,24 @@
         }
       }
     },
-    "PLRSSIConfigError" : {
+    "PLWakeUpThresholdStepper" : {
       "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock RSSI > Wake RSSI"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RSSI blocco > RSSI risveglio"
-          }
-        }
-      }
-    },
-    "PLRSSILock" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock Mac if RSSI below"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Blocca Mac se RSSI è sotto"
-          }
-        }
-      }
-    },
-    "PLRSSIWakeUp" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wake Mac if RSSI above"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sveglia Mac se RSSI è sopra"
-          }
-        }
-      }
-    },
-    "PLWorkingHeaderMessage" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Running"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In funzione"
-          }
-        }
-      }
-    },
-    "UtilityApp" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "UtilityApp"
-          }
-        }
-      }
-    },
-    "Wake Up Threshold" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wake Up Threshold"
           }
-        },
-        "it" : {
+        }
+      }
+    },
+    "PLWakeUpThresholdToggle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Soglia di Risveglio"
+            "value" : "Wake Up Threshold"
           }
         }
       }

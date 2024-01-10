@@ -1,7 +1,6 @@
 import SwiftUI
-import MacControlCenterUI
 
-struct PLMainSwitchView: View {
+struct PLHeaderPanel: View {
     @Binding var mainSwitch: Bool
     
     var body: some View {
@@ -11,10 +10,8 @@ struct PLMainSwitchView: View {
                     Toggle("", isOn: $mainSwitch)
                         .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                         .shadow(radius: 5)
-                        .onChange(of: mainSwitch) { _, newValue in
-                            withAnimation {
-                                mainSwitch = newValue
-                            }
+                        .onChange(of: mainSwitch) { _, new in
+                            withAnimation { mainSwitch = new }
                         }
                     
                     Image(systemName: "lock.fill")
@@ -28,7 +25,7 @@ struct PLMainSwitchView: View {
                 
                 Spacer()
                 
-                Button(action: { NSApplication.shared.terminate(nil) }) {
+                Button { NSApplication.shared.terminate(nil) } label: {
                     Image(systemName: "xmark.circle.fill")
                         .font(.system(size: 20.0, weight: .regular))
                         .foregroundColor(.red)
