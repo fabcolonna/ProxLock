@@ -18,7 +18,7 @@ struct PLErrorPanel: View {
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
             }
-            .frame(width: .infinity)
+            //.frame(width: .infinity)
         }
     }
 }

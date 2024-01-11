@@ -32,9 +32,10 @@ struct PLSignalChart: View {
     }
     
     private func mapRSSIToIndex() -> Int {
-        let scaled = (rssi - rssiRange.lowerBound) / (rssiRange.upperBound - rssiRange.lowerBound)
-        let mapped = Int(scaled) * (leds - 1)
-        return max(0, min(mapped, leds - 1))
+        if rssi.isNaN { return -1 }
+        
+        let normalizedRSSI = (rssi - rssiRange.lowerBound) / (rssiRange.upperBound - rssiRange.lowerBound)
+        return Int(round(normalizedRSSI * Double(leds - 1)))
     }
 }
  

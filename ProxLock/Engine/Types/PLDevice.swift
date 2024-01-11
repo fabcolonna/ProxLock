@@ -1,27 +1,37 @@
 import Foundation
 import CoreBluetooth
 
-class PLDevice: Identifiable, Equatable {
-    let id: UUID
+class PLDevice: Identifiable, Hashable {
+    let uuid: UUID
     let type: PLDeviceType
     let name: String
     
     var state: CBPeripheralState
     var rssi: DBm
     
-    init(type: PLDeviceType, id: UUID, name: String,
+    var id: String { uuid.uuidString + String(state.rawValue) + String(rssi) }
+    
+    init(type: PLDeviceType, uuid: UUID, name: String,
          state: CBPeripheralState = .disconnected, rssi: DBm = .nan) {
     
-        self.id = id
+        self.uuid = uuid
         self.type = type
         self.name = name
         self.state = state
         self.rssi = rssi
     }
-
-    static func == (lhs: PLDevice, rhs: PLDevice) -> Bool { lhs.id == rhs.id }
     
-    static let mock: PLDevice = .init(type: .AirPodsPro, id: UUID(), name: "AirPods")
+    func updateData(state: CBPeripheralState, rssi: DBm) {
+        self.state = state
+        self.rssi = rssi
+    }
+    
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
+
+    // Only checks if UUID are equals, not ID
+    static func == (lhs: PLDevice, rhs: PLDevice) -> Bool { lhs.uuid == rhs.uuid }
+    
+    static let mock: PLDevice = .init(type: .AirPodsPro, uuid: UUID(), name: "AirPods")
 }
 
 struct PLDeviceType {

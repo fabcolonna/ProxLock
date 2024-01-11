@@ -1,10 +1,12 @@
 import Foundation
 import CoreBluetooth
-import OrderedCollections
+import SwiftUI
 
 typealias DBm = Double
 
 class PLEngine: NSObject, ObservableObject {
+    private let minimumRssiBeforeUnavailable: DBm = -85.0
+    
     private var manager: CBCentralManager!
     
     let range: ClosedRange<DBm> = (-80.0)...(-30.0)
@@ -17,11 +19,9 @@ class PLEngine: NSObject, ObservableObject {
     
     @Published var monitoredDevice: PLDevice?
     
-    @Published var allDevices: OrderedDictionary<UUID, PLDevice> = [:]
+    @Published var allDevices: [UUID : PLDevice] = [:]
     
-    var allDevicesSortedByRSSI: Array<(key: UUID, value: PLDevice)> {
-        allDevices.elements.sorted(by: { $0.value.rssi > $1.value.rssi })
-    }
+    var allDevicesSortedByRSSI: [PLDevice] { allDevices.values.sorted { $0.rssi > $1.rssi } }
     
     var isScanning: Bool { manager.isScanning }
     
@@ -44,7 +44,7 @@ class PLEngine: NSObject, ObservableObject {
         
         PLLogger.debug("Got start scan request. OK")
         manager.scanForPeripherals(withServices: nil, options: [
-            CBCentralManagerScanOptionAllowDuplicatesKey: false
+            CBCentralManagerScanOptionAllowDuplicatesKey: true
         ])
     }
     
@@ -92,9 +92,25 @@ extension PLEngine: CBCentralManagerDelegate {
               let deviceType: PLDeviceType = .fromManufactureData(data: info)
         else { return }
         
-        let device: PLDevice = .init(type: deviceType, id: peripheral.identifier, name: name,
-                                     rssi: DBm(truncating: RSSI))
+        let uuid = peripheral.identifier
+        let rssi = DBm(truncating: RSSI)
         
-        allDevices.updateValue(device, forKey: peripheral.identifier)
+        if rssi < minimumRssiBeforeUnavailable {
+            PLLogger.debug("[SCAN] Device \(name) has RSSI below minimum (was \(rssi)): Ignoring it")
+            withAnimation { let _ = allDevices.removeValue(forKey: uuid) }
+            return
+        }
+        
+        guard let dev = allDevices[uuid] else {
+            PLLogger.debug("[SCAN] Adding new device: \(name)")
+            withAnimation { allDevices[uuid] = .init(type: deviceType, uuid: uuid, name: name, rssi: rssi) }
+            return
+        }
+        
+        let oldRSSI = dev.rssi
+        dev.updateData(state: peripheral.state, rssi: DBm(truncating: RSSI))
+        self.objectWillChange.send()
+        
+        PLLogger.debug("[SCAN] Updating device \(name): RSSI=[\(oldRSSI) -> \(dev.rssi)]")
     }
 }
