@@ -10,9 +10,9 @@ struct PLHeaderPanel: View {
                     Toggle("", isOn: $mainSwitch)
                         .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                         .shadow(radius: 5)
-                        .onChange(of: mainSwitch) { _, new in
+                        .onChange(of: mainSwitch, perform: { new in
                             withAnimation { mainSwitch = new }
-                        }
+                        })
                     
                     Image(systemName: "lock.fill")
                         .font(.system(size: 15, weight: .bold))

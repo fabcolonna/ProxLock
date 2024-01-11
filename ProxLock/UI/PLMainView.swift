@@ -33,7 +33,14 @@ struct PLMainView: View {
             
             PLDevicesPanel(errored: $errored)
             
-            PLSettingsView()
+            PLSettingsPanel(settings: $engine.settings, stepperRange: engine.range, dBmStep: engine.dBmStep)
+                .onChange(of: [engine.settings.lockThreshold, engine.settings.wakeThreshold], perform: { _ in
+                    if (!engine.settings.wakeThresholdEnabled) { return }
+                    
+                    engine.status = engine.settings.lockThreshold >= engine.settings.wakeThreshold
+                    ? PLEngineStatus(.Error, message: "PLInvalidThresholdStatusError")
+                    : .OK
+                })
         }
     }
 }

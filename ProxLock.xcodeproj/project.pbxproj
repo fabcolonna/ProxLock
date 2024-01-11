@@ -18,7 +18,7 @@
 		E5F1920B2B4760C000EF0A99 /* PLMonitorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1920A2B4760C000EF0A99 /* PLMonitorPanel.swift */; };
 		E5F192102B4761E000EF0A99 /* PLHeaderPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1920F2B4761E000EF0A99 /* PLHeaderPanel.swift */; };
 		E5F192122B4778D800EF0A99 /* PLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192112B4778D800EF0A99 /* PLWelcomeView.swift */; };
-		E5F192142B49D53A00EF0A99 /* PLSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192132B49D53A00EF0A99 /* PLSettings.swift */; };
+		E5F192142B49D53A00EF0A99 /* PLSettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192132B49D53A00EF0A99 /* PLSettingsPanel.swift */; };
 		E5F192162B49F69600EF0A99 /* PLDevicesPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192152B49F69600EF0A99 /* PLDevicesPanel.swift */; };
 		E5F192192B4AB8DD00EF0A99 /* PLEngineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F192182B4AB8DD00EF0A99 /* PLEngineStatus.swift */; };
 		E5F1921B2B4AB8F500EF0A99 /* PLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */; };
@@ -45,7 +45,7 @@
 		E5F1920A2B4760C000EF0A99 /* PLMonitorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLMonitorPanel.swift; sourceTree = "<group>"; };
 		E5F1920F2B4761E000EF0A99 /* PLHeaderPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLHeaderPanel.swift; sourceTree = "<group>"; };
 		E5F192112B4778D800EF0A99 /* PLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLWelcomeView.swift; sourceTree = "<group>"; };
-		E5F192132B49D53A00EF0A99 /* PLSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSettings.swift; sourceTree = "<group>"; };
+		E5F192132B49D53A00EF0A99 /* PLSettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLSettingsPanel.swift; sourceTree = "<group>"; };
 		E5F192152B49F69600EF0A99 /* PLDevicesPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLDevicesPanel.swift; sourceTree = "<group>"; };
 		E5F192182B4AB8DD00EF0A99 /* PLEngineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLEngineStatus.swift; sourceTree = "<group>"; };
 		E5F1921A2B4AB8F500EF0A99 /* PLDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLDevice.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				E5F1920A2B4760C000EF0A99 /* PLMonitorPanel.swift */,
 				E5F192302B4D548200EF0A99 /* PLErrorPanel.swift */,
 				E5F192152B49F69600EF0A99 /* PLDevicesPanel.swift */,
-				E5F192132B49D53A00EF0A99 /* PLSettings.swift */,
+				E5F192132B49D53A00EF0A99 /* PLSettingsPanel.swift */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					E5F191C62B44D5ED00EF0A99 = {
 						CreatedOnToolsVersion = 15.1;
@@ -276,7 +276,7 @@
 				E5F192312B4D548200EF0A99 /* PLErrorPanel.swift in Sources */,
 				E5F192162B49F69600EF0A99 /* PLDevicesPanel.swift in Sources */,
 				E5F1922A2B4C8E8900EF0A99 /* PLLogger.swift in Sources */,
-				E5F192142B49D53A00EF0A99 /* PLSettings.swift in Sources */,
+				E5F192142B49D53A00EF0A99 /* PLSettingsPanel.swift in Sources */,
 				E5F191CB2B44D5ED00EF0A99 /* PLApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +289,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -318,6 +319,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -337,7 +339,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -352,6 +354,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -381,6 +384,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -394,7 +398,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -411,6 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ProxLock/Preview Content\"";
 				DEVELOPMENT_TEAM = 924V7SBV96;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -439,6 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ProxLock/Preview Content\"";
 				DEVELOPMENT_TEAM = 924V7SBV96;
 				ENABLE_HARDENED_RUNTIME = YES;

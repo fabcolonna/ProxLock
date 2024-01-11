@@ -23,9 +23,9 @@ struct PLWelcomeView: View {
             Toggle("", isOn: $internalMainSwitch)
                 .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 .shadow(radius: 5)
-                .onChange(of: internalMainSwitch) { _, new in
+                .onChange(of: internalMainSwitch, perform: { new in
                     withAnimation { mainSwitch = new }
-                }
+                })
             
             Spacer()
         }

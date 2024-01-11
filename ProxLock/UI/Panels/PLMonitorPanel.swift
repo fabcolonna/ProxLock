@@ -17,7 +17,6 @@ struct PLMonitorPanel: View {
                 VStack (alignment: .leading) {
                     HStack {
                         Text(device.name)
-                            .frame(width: .infinity, alignment: .leading)
                             .fontWeight(.bold)
                             .lineLimit(1)
                         
@@ -30,6 +29,7 @@ struct PLMonitorPanel: View {
                     }
                     
                     PLSignalChart(rssiRange: chartRange, step: dBmStep)
+                        .frame(height: 25)
                 }
             }
         }

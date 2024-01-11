@@ -39,12 +39,13 @@ struct PLDevicesPanel: View {
             if !errored, expanded {
                 ScrollView {
                     VStack(spacing: 10) {
-                        ForEach(engine.allDevicesSortedByRSSI, id: \.key) { _, dev in
+                        ForEach(engine.allDevicesSortedByRSSI, id: \.id) { dev in
                             PLDeviceEntry(device: dev)
                                 .transition(.opacity)
                         }
                     }
                 }
+                .frame(height: engine.allDevicesSortedByRSSI.count > 0 ? nil : 0)
                 .onAppear { engine.startScan() }
                 .onDisappear { engine.stopScan() }
             }
@@ -74,8 +75,12 @@ fileprivate struct PLDeviceEntry: View {
                 Text(device.name)
                 Spacer()
                 
+                Text(device.rssi.isNaN ? "" : "\(String(format: "%.0f", device.rssi))")
+                    .font(.system(size: 12, design: .monospaced))
+                
                 PLSignalChart(rssiRange: chartRange, step: step, rssi: $device.rssi)
-                    .frame(width: 70)
+                    .frame(width: 70, height: 18)
+                    .padding(.trailing)
             }
             .padding(4)
             .buttonStyle(.plain)
