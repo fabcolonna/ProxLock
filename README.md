@@ -34,7 +34,7 @@ I took inspiration from a very cool open-source project named [`BLEUnlock`](http
 
 ## Requirements
 
-- A Mac that supports Bluetooth LE and runs macOS Sonoma (or newer);
+- A Mac that supports Bluetooth LE and runs macOS Sonoma (or newer). Actually, I might add support for Ventura, as soon as I figure out how to handle deprecated Swift functions.
 - iPhone >= 5s / any kind of Apple Watch / any kind of AirPods.
 
 ## Authors
