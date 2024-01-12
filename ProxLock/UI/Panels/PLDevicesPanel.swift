@@ -50,6 +50,7 @@ struct PLDevicesPanel: View {
                         }
                     }
                 }
+                .frame(height: engine.allDevicesSortedByRSSI.count > 0 ? nil : 0)
                 .onAppear { engine.startScan() }
                 .onDisappear { engine.stopScan() }
             }
