@@ -1,8 +1,13 @@
 import SwiftUI
 
 struct PLMonitorPanel: View {
-    @State var device: PLDevice?
+    @EnvironmentObject var engine: PLEngine
+    
+    @Binding var device: PLDevice?
+    
     @State var dBmStep: Double
+    
+    @State private var showRSSI = false
     
     private let chartRange: ClosedRange<DBm> = (-85.0)...(-25.0)
         
@@ -22,16 +27,26 @@ struct PLMonitorPanel: View {
                         
                         Spacer()
                         
-                        Text(device.rssi.isNaN ? "" : "\(String(format: "%.0f", device.rssi)) dBm")
-                            .font(.system(size: 12, design: .monospaced))
-                            .frame(alignment: .trailing)
-                            .padding(.trailing)
+                        if showRSSI {
+                            Text(device.rssi.isNaN ? "" : "\(String(format: "%.0f", device.rssi)) dBm")
+                                .font(.system(size: 12, design: .monospaced))
+                                .frame(alignment: .trailing)
+                                .padding(.trailing)
+                                .opacity(showRSSI ? 1.0 : 0.0)
+                                .scaleEffect(showRSSI ? 1.0 : 0.5)
+                        }
                     }
                     
-                    PLSignalChart(rssiRange: chartRange, step: dBmStep)
-                        .frame(height: 25)
+                    if device.rssi != nil {
+                        PLSignalChart(rssiRange: chartRange, step: dBmStep, rssi: $device.rssi)
+                            .frame(height: 25)
+                    }
                 }
             }
+            .onAppear { showRSSI = engine.settings.showRSSIForAnyDevice }
+            .onChange(of: engine.settings.showRSSIForAnyDevice, perform: { value in
+                withAnimation(.easeInOut) { showRSSI = value }
+            })
         }
     }
 }

@@ -12,7 +12,14 @@
       }
     },
     "%@" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%@ dBm" : {
       "localizations" : {
@@ -25,21 +32,17 @@
       }
     },
     "Errore" : {
-
-    },
-    "Made with ♥️ by fabcolonna" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Made with ♥️ by fabcolonna"
+            "value" : "Error"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Creato con ♥️ da fabcolonna"
+            "value" : "Errore"
           }
         }
       }
@@ -86,6 +89,12 @@
             "state" : "translated",
             "value" : "Delay before Locking"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritardo prima del Blocco"
+          }
         }
       }
     },
@@ -114,6 +123,12 @@
             "state" : "translated",
             "value" : "Wake threshold should be greater than Lock threshold!"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La soglia di Risveglio dovrebbe essere maggiore di quella di Blocco!"
+          }
         }
       }
     },
@@ -124,6 +139,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Launch On Login"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvia al Login"
           }
         }
       }
@@ -136,6 +157,12 @@
             "state" : "translated",
             "value" : "Lock Threshold"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soglia di Blocco"
+          }
         }
       }
     },
@@ -147,6 +174,12 @@
             "state" : "translated",
             "value" : "Lock To Screensaver"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blocca con Salvaschermo"
+          }
         }
       }
     },
@@ -157,6 +190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Signal Timeout"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timeout Nessun Segnale"
           }
         }
       }
@@ -186,6 +225,12 @@
             "state" : "translated",
             "value" : "Pause Now Playing"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metti in pausa In Riproduzione"
+          }
         }
       }
     },
@@ -206,6 +251,23 @@
         }
       }
     },
+    "PLShowRSSIForAnyDeviceOption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show RSSI values"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra valori RSSI"
+          }
+        }
+      }
+    },
     "PLWakeUpThresholdStepper" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -213,6 +275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wake Up Threshold"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soglia di RIsveglio"
           }
         }
       }
@@ -225,8 +293,17 @@
             "state" : "translated",
             "value" : "Wake Up Threshold"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soglia di Risveglio"
+          }
         }
       }
+    },
+    "Stop using" : {
+
     }
   },
   "version" : "1.0"

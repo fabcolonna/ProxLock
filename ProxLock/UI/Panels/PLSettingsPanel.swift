@@ -33,7 +33,7 @@ struct PLSettingsPanel: View {
             
             if expanded {
                 VStack {
-                    PLToggle(isOn: $wakeThresholdToggle, symbol: "wake", text: "PLWakeUpThresholdToggle")
+                    PLToggle(isOn: $wakeThresholdToggle, symbol: "wake", text: .init("PLWakeUpThresholdToggle"))
                     .onChange(of: wakeThresholdToggle, perform: { value in
                         withAnimation(.bouncy) {
                             settings.wakeThresholdEnabled = value
@@ -41,27 +41,28 @@ struct PLSettingsPanel: View {
                         }
                     })
                     
-                    PLToggle(isOn: $settings.lockToScreenSaver, symbol: "photo", text: "PLLockToScreensaverToggle")
-                    PLToggle(isOn: $settings.pauseNowPlaying, symbol: "pause.fill", text: "PLPauseNowPlayingToggle")
+                    PLToggle(isOn: $settings.lockToScreenSaver, symbol: "photo", text: .init("PLLockToScreensaverToggle"))
+                    PLToggle(isOn: $settings.pauseNowPlaying, symbol: "pause.fill", text: .init("PLPauseNowPlayingToggle"))
                 }
                 
                 Divider()
                 
                 VStack {
-                    PLToggle(isOn: $settings.launchOnLogin, symbol: "app.dashed", text: "PLLaunchOnLoginOption")
-                    PLToggle(isOn: $settings.delayBeforeLocking, symbol: "clock", text: "PLDelayBeforeLockingOption")
-                    PLToggle(isOn: $settings.noSignalTimeout, symbol: "wifi.slash", text: "PLNoSignalTimeoutOption")
+                    PLToggle(isOn: $settings.launchOnLogin, symbol: "app.dashed", text: .init("PLLaunchOnLoginOption"))
+                    PLToggle(isOn: $settings.delayBeforeLocking, symbol: "clock", text: .init("PLDelayBeforeLockingOption"))
+                    PLToggle(isOn: $settings.noSignalTimeout, symbol: "antenna.radiowaves.left.and.right.slash", text: .init("PLNoSignalTimeoutOption"))
+                    PLToggle(isOn: $settings.showRSSIForAnyDevice, symbol: "textformat.123", text: .init("PLShowRSSIForAnyDeviceOption"))
                 }
                 
                 Divider()
                 
                 VStack {
                     PLStepper(value: $settings.lockThreshold, range: stepperRange,
-                                 symbol: "sleep", text: "PLLockThresholdStepper", step: dBmStep)
+                              symbol: "sleep", text: .init("PLLockThresholdStepper"), step: dBmStep)
                     
                     if settings.wakeThresholdEnabled {
                         PLStepper(value: $settings.wakeThreshold, range: stepperRange,
-                                     symbol: "wake", text: "PLWakeUpThresholdStepper", step: dBmStep)
+                                  symbol: "wake", text: .init("PLWakeUpThresholdStepper"), step: dBmStep)
                     }
                 }
             }
@@ -73,11 +74,13 @@ fileprivate struct PLToggle: View {
     @Binding var isOn: Bool
     
     @State var symbol: String
-    @State var text: String
+    @State var text: LocalizedStringKey
     
     var body: some View {
         HStack {
             Image(systemName: symbol)
+                .frame(width: 20, height: 20)
+            
             Text(text)
             Spacer()
             
@@ -93,7 +96,7 @@ fileprivate struct PLStepper: View {
 
     @State var range: ClosedRange<DBm>
     @State var symbol: String
-    @State var text: String
+    @State var text: LocalizedStringKey
     @State var step: Double
     
     @State private var animate = false

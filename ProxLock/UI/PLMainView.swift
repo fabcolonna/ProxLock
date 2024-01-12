@@ -15,7 +15,7 @@ struct PLMainView: View {
             
             MenuPanel {
                 ZStack {
-                    PLMonitorPanel(device: .mock, dBmStep: engine.dBmStep)
+                    PLMonitorPanel(device: $engine.monitoredDevice, dBmStep: engine.dBmStep)
                         .transition(.opacity)
                         .blur(radius: errored ? 10.0 : 0.0)
                         .opacity(errored ? 0.5 : 1.0)

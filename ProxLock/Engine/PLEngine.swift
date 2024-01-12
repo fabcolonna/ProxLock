@@ -58,6 +58,17 @@ class PLEngine: NSObject, ObservableObject {
         manager.stopScan()
         allDevices.removeAll()
     }
+    
+    func setMonitoredDevice(uuid: UUID) {
+        withAnimation(.bouncy) { monitoredDevice = allDevices[uuid] }
+        withAnimation { let _ = allDevices.removeValue(forKey: uuid) }
+        self.objectWillChange.send()
+    }
+    
+    func unsetMonitoredDevice() {
+        withAnimation(.bouncy) { monitoredDevice = nil }
+        self.objectWillChange.send()
+    }
 }
 
 extension PLEngine: CBCentralManagerDelegate {
@@ -95,6 +106,14 @@ extension PLEngine: CBCentralManagerDelegate {
         let uuid = peripheral.identifier
         let rssi = DBm(truncating: RSSI)
         
+        // If the peripheral is currently set as monitored, we don't wanna show it in the
+        // allDevices, otherwise the user would see it in the Available panel. Hence, we
+        // need to filter the UUID of that one
+        if uuid == monitoredDevice?.uuid { return }
+        
+        // If the peripheral has RSSI too low, we simply remove it from the available devices
+        // dictionary, or if it was never present, we simply ignore it by not adding it.
+        // This prevents the user to select devices with a weak signal.
         if rssi < minimumRssiBeforeUnavailable {
             PLLogger.debug("[SCAN] Device \(name) has RSSI below minimum (was \(rssi)): Ignoring it")
             withAnimation { let _ = allDevices.removeValue(forKey: uuid) }

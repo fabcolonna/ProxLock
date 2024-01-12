@@ -15,12 +15,6 @@ struct PLDevicesPanel: View {
                 .font(.system(size: 13, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            if engine.isScanning {
-                ProgressView()
-                    .controlSize(.small)
-                    .opacity(expanded ? 1.0 : 0.0)
-            }
-            
             Spacer()
             
             Button {
@@ -37,15 +31,25 @@ struct PLDevicesPanel: View {
             header
             
             if !errored, expanded {
-                ScrollView {
-                    VStack(spacing: 10) {
-                        ForEach(engine.allDevicesSortedByRSSI, id: \.id) { dev in
-                            PLDeviceEntry(device: dev)
-                                .transition(.opacity)
+                VStack {
+                    if engine.allDevicesSortedByRSSI.isEmpty {
+                        ProgressView()
+                            .controlSize(.small)
+                            .padding(.top)
+                            .padding(.bottom)
+                            .opacity(expanded ? 1.0 : 0.0)
+                    } else {
+                        ScrollView {
+                            VStack(spacing: 10) {
+                                ForEach(engine.allDevicesSortedByRSSI, id: \.id) { dev in
+                                    PLDeviceEntry(device: dev)
+                                        .transition(.opacity)
+                                        .onTapGesture { engine.setMonitoredDevice(uuid: dev.uuid) }
+                                }
+                            }
                         }
                     }
                 }
-                .frame(height: engine.allDevicesSortedByRSSI.count > 0 ? nil : 0)
                 .onAppear { engine.startScan() }
                 .onDisappear { engine.stopScan() }
             }
@@ -55,9 +59,12 @@ struct PLDevicesPanel: View {
 }
 
 fileprivate struct PLDeviceEntry: View {
+    @EnvironmentObject var engine: PLEngine
+    
     @State var device: PLDevice
     
-    @State private var isHovered: Bool = false
+    @State private var showRSSI = false
+    @State private var isHovered = false
     
     private let chartRange: ClosedRange<DBm> = (-80.0)...(-35.0)
     private let step = 15.0
@@ -75,8 +82,12 @@ fileprivate struct PLDeviceEntry: View {
                 Text(device.name)
                 Spacer()
                 
-                Text(device.rssi.isNaN ? "" : "\(String(format: "%.0f", device.rssi))")
-                    .font(.system(size: 12, design: .monospaced))
+                if showRSSI {
+                    Text(device.rssi.isNaN ? "" : "\(String(format: "%.0f", device.rssi))")
+                        .font(.system(size: 10, design: .monospaced))
+                        .opacity(showRSSI ? 1.0 : 0.0)
+                        .scaleEffect(showRSSI ? 1.0 : 0.5)
+                }
                 
                 PLSignalChart(rssiRange: chartRange, step: step, rssi: $device.rssi)
                     .frame(width: 70, height: 18)
@@ -98,6 +109,10 @@ fileprivate struct PLDeviceEntry: View {
             .onHover(perform: { hovering in
                 withAnimation { isHovered = hovering }
             })
+            .onChange(of: engine.settings.showRSSIForAnyDevice, perform: { value in
+                withAnimation(.easeInOut) { showRSSI = value }
+            })
+            .onAppear { showRSSI = engine.settings.showRSSIForAnyDevice }
         }
     }
 }

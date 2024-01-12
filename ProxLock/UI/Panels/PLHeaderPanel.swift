@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct PLHeaderPanel: View {
+    @EnvironmentObject var engine: PLEngine
+    
     @Binding var mainSwitch: Bool
     
     var body: some View {
@@ -25,13 +27,21 @@ struct PLHeaderPanel: View {
                 
                 Spacer()
                 
-                Button { NSApplication.shared.terminate(nil) } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 20.0, weight: .regular))
-                        .foregroundColor(.red)
+                HStack {
+                    if let _ = engine.monitoredDevice {
+                        Button { engine.unsetMonitoredDevice() } label: {
+                            Text("Stop using")
+                        }
+                    }
+                    
+                    Button { NSApplication.shared.terminate(nil) } label: {
+                        Image(systemName: "power.circle.fill")
+                            .font(.system(size: 20.0, weight: .regular))
+                            .foregroundColor(.red)
+                    }
+                    .buttonStyle(.plain)
+                    .shadow(radius: 5)
                 }
-                .buttonStyle(.plain)
-                .shadow(radius: 5)
             }
         }
     }
