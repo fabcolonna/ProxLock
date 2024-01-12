@@ -3,8 +3,6 @@ import SwiftUI
 struct PLMonitorPanel: View {
     @EnvironmentObject var engine: PLEngine
     
-    @Binding var device: PLDevice?
-    
     @State var dBmStep: Double
     
     @State private var showRSSI = false
@@ -12,7 +10,7 @@ struct PLMonitorPanel: View {
     private let chartRange: ClosedRange<DBm> = (-85.0)...(-25.0)
         
     var body: some View {
-        if let device = device {
+        if let device = engine.monitoredDevice {
             HStack {
                 Image(systemName: device.type.symbolName)
                     .resizable()
@@ -37,10 +35,9 @@ struct PLMonitorPanel: View {
                         }
                     }
                     
-                    if device.rssi != nil {
-                        PLSignalChart(rssiRange: chartRange, step: dBmStep, rssi: $device.rssi)
-                            .frame(height: 25)
-                    }
+                    PLSignalChart(rssiRange: chartRange, step: dBmStep, 
+                                  rssi: Binding(get: { device.rssi }, set: { val in device.rssi = val }))
+                        .frame(height: 25)
                 }
             }
             .onAppear { showRSSI = engine.settings.showRSSIForAnyDevice }

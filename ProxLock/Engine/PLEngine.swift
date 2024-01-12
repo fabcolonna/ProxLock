@@ -108,8 +108,11 @@ extension PLEngine: CBCentralManagerDelegate {
         
         // If the peripheral is currently set as monitored, we don't wanna show it in the
         // allDevices, otherwise the user would see it in the Available panel. Hence, we
-        // need to filter the UUID of that one
-        if uuid == monitoredDevice?.uuid { return }
+        // need to filter the UUID of that one. We want to push new RSSI updates though,
+        // so that they can be displayed in the Monitor panel.
+        if uuid == monitoredDevice?.uuid {
+            PLLogger.debug("[SCAN MONITORED] Updating: RSSI=[\()]")
+        }
         
         // If the peripheral has RSSI too low, we simply remove it from the available devices
         // dictionary, or if it was never present, we simply ignore it by not adding it.
